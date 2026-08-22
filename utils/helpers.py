@@ -72,7 +72,7 @@ def seed_sample_data():
         category="Operators",
         difficulty="Easy",
         max_marks=10,
-        max_attempts=3,
+        max_attempts=0,
         input_spec=input_spec,
         reference_solution=SAMPLE_REFERENCE_SOLUTION,
         created_by=teacher_id,
