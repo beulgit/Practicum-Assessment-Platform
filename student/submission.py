@@ -18,11 +18,13 @@ def get_attempt_number(student_id, question_id):
 
 
 def attempts_remaining(student_id, question_id, max_attempts):
-    if not max_attempts:
-        return None  # unlimited
-    used = get_attempt_number(student_id, question_id) - 1
-    return max(0, max_attempts - used)
-
+    """
+    Attempt limits are disabled platform-wide: students always have
+    unlimited attempts, regardless of a question's configured max_attempts.
+    Attempt history/counters are still tracked (see get_attempt_number)
+    for teacher analytics -- this only removes the blocking behavior.
+    """
+    return None  # None == unlimited, always
 
 def grade_submission(student_id, question_id, code, max_marks):
     """
